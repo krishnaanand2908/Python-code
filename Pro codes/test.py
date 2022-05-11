@@ -1,4 +1,1 @@
-from krishna import *
-
-
-krish1()
+print("123456789\rKrishna")
