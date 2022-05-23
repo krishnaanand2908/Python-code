@@ -50,7 +50,7 @@ while(True):
         if c == "\n":
             continue
         elif c == "Q":
-            exit
+            break
             
 
     elif choice1 == 2:
@@ -58,19 +58,21 @@ while(True):
         num1 = float(input("Enter first number:\n"))
         num2 = float(input("Enter second number:\n"))
         calcy()
+        c = input("If you want to coninue than press Enter otherwise press Q:\n")
         c.upper()
         if c == "\n":
             continue
         elif c == "Q":
-            exit
+            break
 
     elif choice1 == 3:
         base = float(input("Enter the base value:\n"))
         power = float(input("Enter the power:\n"))
         expo()
+        c = input("If you want to coninue than press Enter otherwise press Q:\n")
         c.upper()
         if c == "\n":
             continue
         elif c == "Q":
-            exit
+            break
         
