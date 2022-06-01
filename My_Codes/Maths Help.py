@@ -1,3 +1,6 @@
+from typing import overload
+
+
 def tables():
     print(f"{choice2} x 1 = {choice2 * 1}")
     print(f"{choice2} x 2 = {choice2 * 2}")
@@ -20,12 +23,15 @@ def calcy():
     elif choice3 == 4:
         print(num1, "÷", num2, "=", num1 / num2)
     elif choice3 == 5:
-        if num1 > num2:
-            g = num1
-            s = num2
-        else:
-            g = num2
-            s = num1
+        try:
+            if num1 > num2:
+                g = num1
+                s = num2
+            else:
+                g = num2
+                s = num1
+        except OverflowError:
+            print("The calculated value is too large!"*100)
         print("The remainder of", num1, "and", num2, "is", g % s)
     elif choice3 == 6:
         print(num1, "raised to the power of", num2, "=", num1 ** num2)
@@ -37,7 +43,10 @@ def calcy():
         print("The cube of", num2, "=", num2 ** 3)
 
 def expo():
-    print(f"{base} raised to the power of {power} = {base ** power}")
+    try:
+        print(f"{base} raised to the power of {power} = {base ** power}")
+    except OverflowError:
+        print("The calculated value is too large!"*100)
     
 while(True):
     choice1 = int(input("Choose what you want to do:\n 1. Multiplacation Tables\n 2. Calculator\n 3. Exponents\n"))
@@ -66,9 +75,12 @@ while(True):
             break
 
     elif choice1 == 3:
-        base = float(input("Enter the base value:\n"))
-        power = float(input("Enter the power:\n"))
-        expo()
+        try:
+            base = float(input("Enter the base value:\n"))
+            power = float(input("Enter the power:\n"))
+            expo()
+        except OverflowError:
+            print("Can't print the value!"*100)
         c = input("If you want to coninue than press Enter otherwise press Q:\n")
         c.upper()
         if c == "\n":

@@ -25,7 +25,7 @@ def guess_game():
             print("Congratulations!\n You have guessed the the number!\n You took", guess, "number of turns to guess", num)
             guess = guess + 1
             
-    if guess == 9:
+    if guess == 10:
         print("\tGame Over!\n The number was", num)
         temp1 = input("Enter to continue")
         

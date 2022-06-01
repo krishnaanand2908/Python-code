@@ -2,7 +2,7 @@ import random
 
 def quizy():
     score = 0
-    numc = random.randint(1,8)
+    numc = random.randint(1, 8)
     
     if numc == 1:
         print("Which is the largest continent in the world?")
@@ -12,7 +12,7 @@ def quizy():
         print("d. South Australia")
         answer = input("")
         if answer == "a":
-            score = 1
+            score +=1
         
     elif numc == 2:
         print("Name the only non-metal which is found in liquid state.")
@@ -22,7 +22,7 @@ def quizy():
         print("d. Hydroxide")
         answer = input("")
         if answer == "b":
-            score = 1
+            score +=1
             
     elif numc == 3:
         print("Name the only metal which is found in liquid state.")
@@ -32,7 +32,7 @@ def quizy():
         print("d. Liquisteel")
         answer = input("")
         if answer == "a":
-            score = 1
+            score +=1
             
     elif numc == 4:
         print("Which of the following is a semiaquatic mammal?")
@@ -42,7 +42,7 @@ def quizy():
         print("d. both a and b ")
         answer = input("")
         if answer == "c":
-            score = 1
+            score +=1
             
     elif numc == 5:
         print("Which of the following trees have roots above the ground?")
@@ -62,7 +62,7 @@ def quizy():
         print("d. Louis Pasteur")
         answer = input("")
         if answer == "c":
-            score = 1
+            score +=1
             
     elif numc == 7:
         print("Wine is made from __")
@@ -72,20 +72,41 @@ def quizy():
         print("d. mango")
         answer = input("")
         if answer == "a":
-            score = 1
+            score +=1
         
-    else:
-        print()
-    print("\n\n") 
+    # if numc == 1 and answer == "b":
+    #     right = ("Y")
+    #     score += 1
+    # elif numc == 2 and answer == "b":
+    #     right = ("Y")
+    #     score += 1
+    # elif numc == 3 and answer == "a":
+    #     right = ("Y")
+    #     score += 1
+    # elif numc == 4 and answer == "c":
+    #     right = ("Y")
+    #     score += 1
+    # elif numc == 5 and answer == "c":
+    #     right = ("Y")
+    #     score += 1
+    # elif numc == 6 and answer == "c":
+    #     right = ("Y")
+    #     score += 1
+    # elif numc == 7 and answer == "a":
+    #     right = ("Y")
+    #     score += 1
+    # else:
+    #     score+=0
     return score
         
     
 round = 1
 name = input("Enter your name here:\n")
-points = 0
-while (round <= 4):
+
+while (round < 8):
     score = quizy()
-    points = points + score 
-    round = round + 1
     
-print(name, "scored", points, "points!")
+    if round > 7:
+        print(name, "scored", score, "points!")
+    
+    round = round + 1
