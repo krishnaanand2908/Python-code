@@ -37,7 +37,7 @@ def calcy():
         print(num1, "raised to the power of", num2, "=", num1 ** num2)
     elif choice3 == 7:
         print("The square of", num1, "=", num1 ** 2)
-        print("The square of", num1, "=", num1 ** 2)
+        print("The square of", num2, "=", num2 ** 2)
     elif choice3 == 8:
         print("The cube of", num1, "=", num1 ** 3)
         print("The cube of", num2, "=", num2 ** 3)

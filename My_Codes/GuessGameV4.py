@@ -1,10 +1,8 @@
 import random
-
-def clear_mini():
-    print("\n"*50)
+import os
     
 def guess_game():
-    num = random.randint(1, 100)
+    num = random.randint(1, 151)
     guess = 1
     print("You have to guess a number between 1 to 150\n Remember: You will get only 9 turns!")
     
@@ -23,23 +21,25 @@ def guess_game():
             continue
         else:
             print("Congratulations!\n You have guessed the the number!\n You took", guess, "number of turns to guess", num)
-            guess = guess + 1
+            input("Press Enter to continue")
+            
             
     if guess == 10:
         print("\tGame Over!\n The number was", num)
-        temp1 = input("Enter to continue")
         
-while(True):
-    clear_mini()
-    choice = input("Press R to continue or Q to quit: ")
-    choice = choice.upper()
-    if choice == "Q":
-        exit
-    elif choice == "R":
+while True:
+    os.system("CLS")
+    choice1 = input("Press Enter to continue or Q to quit:\n")
+    choice1 = choice1.upper()
+    
+    if choice1 == "":
         guess_game()
-    else: 
-        print("Wrong Choice!")
-        temp = input("Enter to conitnue")
+    elif choice1 == "Q":
+        exit()
+    else:
+        print("???")
+    
+        
     
     
         
