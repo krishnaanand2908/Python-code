@@ -6,7 +6,7 @@ def guess_game():
     guess = 1
     print("You have to guess a number between 1 to 150\n Remember: You will get only 9 turns!")
     
-    while(guess<9):
+    while(guess<=9):
         numg = int(input("Enter the number:\n"))
         
         if numg > num:
@@ -22,6 +22,7 @@ def guess_game():
         else:
             print("Congratulations!\n You have guessed the the number!\n You took", guess, "number of turns to guess", num)
             input("Press Enter to continue")
+            guess = guess + 1
             
             
     if guess == 10:

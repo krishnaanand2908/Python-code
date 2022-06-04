@@ -1,7 +1,5 @@
 import random
-
-def clear():
-    print("\n"*100)
+import os
     
 
 def game():
@@ -36,8 +34,8 @@ def game():
     
 if __name__ == '__main__':
     while True:
-        clear()
-        print("Press R to Start or Q to quit", end=" ")
+        os.system("CLS")
+        print("Press R to Start or Q to quit")
         choice = input(": ")
         choice = choice.upper()
         if choice == 'Q':
