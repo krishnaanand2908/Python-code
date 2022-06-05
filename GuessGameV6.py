@@ -13,16 +13,19 @@ def guess_game_v5():
         if guessed_number == num:
             congo = fontstyle.apply("Congratulations!\nYou have guessed the number!", "bold/italic/white/yellow_bg")
             print(congo)
+            print(f"You took {9-guess} turns!")
             guess = guess + 1
             break
         
         elif guessed_number < num:
+            print(f"Turns remaining: {guess}")
             smaller = fontstyle.apply("The number you have entered is smaller than the number to be guessed!", "bold/italic/blue")
             print(smaller)
             guess = guess + 1
             continue
         
         elif guessed_number > num:
+            print(f"Turns remaining: {guess}")
             greater = fontstyle.apply("The number you have entered is greater than the number to be guessed!", "bold/italic/red")
             print(greater)
             guess = guess + 1
