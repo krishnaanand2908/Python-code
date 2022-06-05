@@ -18,14 +18,14 @@ def guess_game_v5():
             break
         
         elif guessed_number < num:
-            print(f"Turns remaining: {guess}")
+            print(f"Turns remaining: {9-guess}")
             smaller = fontstyle.apply("The number you have entered is smaller than the number to be guessed!", "bold/italic/blue")
             print(smaller)
             guess = guess + 1
             continue
         
         elif guessed_number > num:
-            print(f"Turns remaining: {guess}")
+            print(f"Turns remaining: {9-guess}")
             greater = fontstyle.apply("The number you have entered is greater than the number to be guessed!", "bold/italic/red")
             print(greater)
             guess = guess + 1
