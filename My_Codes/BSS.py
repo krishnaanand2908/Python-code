@@ -69,25 +69,47 @@ def num_fight():
             print(greater)
             score -= 1
             print("Your opponent guessed", ai)
-            input("Press Enter to continue")
+            inp = input("Press Enter to continue of Q to quit")
+            inp = inp.upper()
+            if inp == "":
+                continue
+            elif inp == "Q":
+                break
+            else:
+                print()
             
         elif ai < inp:
             smaller = fontstyle.apply("You Won! [score  +1]", "bold/green")
             print(smaller)
             score += 1
             print("Your opponent guessed", ai)
-            input("Press Enter to continue")
+            inp = input("Press Enter to continue of Q to quit")
+            inp = inp.upper()
+            if inp == "":
+                continue
+            elif inp == "Q":
+                break
+            else:
+                print()
             
         else:
             equal = fontstyle.apple("TIE [score +0]", "bold/blue")
             print(equal)
             print("Your opponent guessed", ai)
-            input("Press Enter to continue")
+            inp = input("Press Enter to continue of Q to quit")
+            inp = inp.upper()
+            if inp == "":
+                continue
+            elif inp == "Q":
+                break
+            else:
+                print()
+                
             
 def calcy():
     choice3 = int(input("Enter your operation here\n 1. Addition\n 2. Subtraction\n 3. Multiplication\n 4. Division\n 5. Remainder\n 6. Exponential Powers\n 7. Square\n 8. Cube\n"))
-    num1 = float("Enter first number")
-    num2 = float("Enter second number")
+    num1 = float(input("Enter first number:\n"))
+    num2 = float(input("Enter second number:\n"))
     if choice3 == 1:
         print(num1, "+", num2, "=", num1 + num2)
     elif choice3 == 2:
@@ -97,27 +119,34 @@ def calcy():
     elif choice3 == 4:
         print(num1, "÷", num2, "=", num1 / num2)
     elif choice3 == 5:
-        try:
-            if num1 > num2:
-                g = num1
-                s = num2
-            else:
-                g = num2
-                s = num1
-        except OverflowError:
-            print("The calculated value is too large!"*100)
-        print("The remainder of", num1, "and", num2, "is", g % s)
+        print("The remainder of", num1, "and", num2, "is", num1 % num2)
     elif choice3 == 6:
-        print(num1, "raised to the power of", num2, "=", num1 ** num2)
+        try:
+            print(num1, "raised to the power of", num2, "=", num1 ** num2)
+        except OverflowError:
+            result_too_large = fontstyle.apply("Result too LARGE!", "bold/italic/red")
+            print(result_too_large)
     elif choice3 == 7:
-        print("The square of", num1, "=", num1 ** 2)
-        print("The square of", num2, "=", num2 ** 2)
+        try:
+            print("The square of", num1, "=", num1 ** 2)
+            print("The square of", num2, "=", num2 ** 2)
+        except OverflowError:
+            result_too_large = fontstyle.apply("Result too LARGE!", "bold/italic/red")
+            print(result_too_large)
+            
     elif choice3 == 8:
-        print("The cube of", num1, "=", num1 ** 3)
-        print("The cube of", num2, "=", num2 ** 3)
+        try:
+            print("The cube of", num1, "=", num1 ** 3)
+            print("The cube of", num2, "=", num2 ** 3)
+        except OverflowError:
+            result_too_large = fontstyle.apply("Result too LARGE!", "bold/italic/red")
+            print(result_too_large)
+        
 
 def quizy():
-    numc = random.randint(1, 8)
+    numc = random.randint(1, 4)
+    congo1 = fontstyle.apply("Right answer! You will get 10M rupees!", "bold/italic/green")
+    congo2 = fontstyle.apply("Wrong answer! You may better pay Rs. 100k to BSS!", "bold/italic/red")
     
     if numc == 1:
         print("Which is the largest continent in the world?")
@@ -126,8 +155,10 @@ def quizy():
         print("c. America")
         print("d. South Australia")
         answer = input("")
-        
-           
+        if answer == "b":
+            print(congo1)
+        else:
+            print(congo2)
         
     elif numc == 2:
         print("Name the only non-metal which is found in liquid state.")
@@ -136,6 +167,10 @@ def quizy():
         print("c. Water")
         print("d. Hydroxide")
         answer = input("")
+        if answer == "b":
+            print(congo1)
+        else:
+            print(congo2)
        
          
             
@@ -146,6 +181,10 @@ def quizy():
         print("c. Molten Iron")
         print("d. Liquisteel")
         answer = input("")
+        if answer == "a":
+            print(congo1)
+        else:
+            print(congo2)
        
           
             
@@ -156,6 +195,10 @@ def quizy():
         print("c. Hippopotamus")
         print("d. both a and b ")
         answer = input("")
+        if answer == "c":
+            print(congo1)
+        else:
+            print(congo2)
         
         
             
@@ -166,6 +209,10 @@ def quizy():
         print("c. Mangrove tree")
         print("d. there's no tree which grow roots above the ground")
         answer = input("")
+        if answer == "c":
+            print(congo1)
+        else:
+            print(congo2)
         
            
             
@@ -176,6 +223,10 @@ def quizy():
         print("c. Edward Jenner")
         print("d. Louis Pasteur")
         answer = input("")
+        if answer == "c":
+            print(congo1)
+        else:
+            print(congo2)
         
             
             
@@ -186,6 +237,10 @@ def quizy():
         print("c. Whisky")
         print("d. mango")
         answer = input("")
+        if answer == "a":
+            print(congo1)
+        else:
+            print(congo2)
     
 def animals():
     os.system("CLS")
@@ -212,6 +267,8 @@ def animals():
 
         name = input("Choose your animal:\n cat\n dog\n cow\n snake\n salamander\n elephant\n eagle\n shark\n humans\n")
         l = input("Choose your language:\n H[HINDI]\n E[ENGLISH]\n")
+        name = name.lower()
+        l = l.upper()
         if name == "cat" and l == "H":
             print(cath)
         elif name == "cat" and l == "E":
@@ -252,8 +309,15 @@ def animals():
             print(humans)
         else:
             print("The entered name, language or both are WRONG!\n Please try again." )
-                    
-        continue
+        inp1 = input("Press enter to continue or Q to quit!:\n")
+        if inp1 == "":
+            continue 
+        elif inp1 == "Q":
+            exit()
+        else:
+            hehe = fontstyle.apply("|---Please come again soon---|", "bold/Italic/black")
+            print(hehe)
+            
         
 
 if __name__ == "__main__":
